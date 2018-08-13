@@ -17,5 +17,6 @@ class BookingsController < ApplicationController
 
   def find_offer
     @offer = Offer.find(params[:id])
+
   end
 end
