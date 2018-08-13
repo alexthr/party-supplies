@@ -2,21 +2,19 @@ class BookingsController < ApplicationController
   before_action :find_offer
 
   def new
-    @booking = @offer.bookings.new(booking_params)
+    @booking = @offer.bookings.new
   end
 
   def create
     @booking = @offer.bookings.new(booking_params)
-    if @booking.save
-      redirect_to offers_path
-    else render :new
-    end
+    @booking.save
+      redirect_to offer_path(@offer)
   end
 
   private
 
   def find_offer
-    @offer = Offer.find(params[:id])
+    @offer = Offer.find(params[:offer_id])
   end
 
   def booking_params
