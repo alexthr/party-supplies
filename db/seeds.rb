@@ -7,9 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Offer.destroy_all
-User.destroy_all
-
 titles = ["Speakers", "DJ table", "Lights", "Smoke machine", "Beer tap"]
 categories = ["Sound", "Lights", "Alcohol", "Decorations", "Misc"]
 
