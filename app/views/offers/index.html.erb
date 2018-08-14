@@ -1,13 +1,8 @@
-<h1>Offers#index</h1>
-<p>Find me in app/views/offers/index.html.erb</p>
-
-
 <%= render 'shared/banner' %>
-
 <div class="container">
   <div class="row">
     <% @offers.each do |offer| %>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <div class="col-xs-6 col-sm-4 col-lg-3">
         <%= render 'shared/card', offer: offer %>
       </div>
     <% end %>
