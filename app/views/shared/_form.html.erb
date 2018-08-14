@@ -1,0 +1,5 @@
+<%= simple_form_for [@offer, @booking] do |f| %>
+  <%= f.input :start_date, as: :date, 'data-behaviour' => 'datepicker' %>
+  <%= f.input :end_date, as: :date, class: "datepicker" %>
+  <%= f.submit "Book for your party", class: "btn btn-primary book-btn" %>
+<% end %>
