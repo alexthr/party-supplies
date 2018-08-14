@@ -1,0 +1,32 @@
+.banner {
+  background-image: url('banner.jpg');
+  background-size: cover;
+  height: 500px;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  color: #0000CD;
+  padding-top: 50px;
+  text-align: center;
+  text-shadow: 2px 2px 3px #FFFFE0;
+}
+
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: #6A5ACD;
+  background-color: rgba(255, 255, 255, .3);
+  padding: 1px;
+  text-align: center;
+}
+
+.stroke-1 {
+  stroke: white;
+  stroke-width: .25em;
+}
+
+p {
+  text-align: center;
+}
+
