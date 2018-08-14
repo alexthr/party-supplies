@@ -1,10 +1,10 @@
 <div class="container">
-  <h1>My bookings</h1>
-  <% @bookings.each do |booking| %>
-    <div class="row">
-      <h2><%= booking.offer.title %></h2>
-      <p><%= booking.offer.price %>€ per day</p>
-      <p><%= booking.start_date.strftime("%Y %B %d") %> - <%= booking.end_date.strftime("%Y %B %d") %></p>
-    </div>
-  <% end %>
+  <h1>Your bookings</h1>
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-xs-6 col-sm-4">
+        <%= render 'card', booking: booking %>
+      </div>
+    <% end %>
+  </div>
 </div>
