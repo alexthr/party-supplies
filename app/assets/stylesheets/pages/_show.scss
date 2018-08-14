@@ -12,8 +12,13 @@
 .offer-wrapper {
   display: flex;
   justify-content: space-between;
+  margin: 50px;
 }
 
+.booking-form {
+  border: 1px solid #E4E4E4;
+  padding: 20px;
+}
 
 div.form-group.date.required.booking_end_date select {
   display: inline-block;
@@ -27,4 +32,9 @@ div.form-group.date.required.booking_start_date select {
 
 .book-btn {
   width: 100%;
+}
+
+.map {
+  height: 500px;
+  background-position: center;
 }
