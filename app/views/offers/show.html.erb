@@ -4,10 +4,15 @@
 </div>
 
 <div class="container">
-  <div class="offer-info">
-    <h1><%= @offer.title %></h1>
-    <p><%= @offer.description %></p>
-    <p>Price: <%= @offer.price %></p>
-    <p><%= @offer.location %></p>
+  <div class="offer-wrapper">
+    <div class="offer-info">
+      <h1><%= @offer.title %></h1>
+      <p><%= @offer.description %></p>
+      <p>Price: <%= @offer.price %></p>
+      <p><%= @offer.location %></p>
+    </div>
+    <div class="booking-form">
+     <%= render "shared/form" %>
+    </div>
   </div>
 </div>

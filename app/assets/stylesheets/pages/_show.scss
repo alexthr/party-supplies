@@ -8,3 +8,23 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.offer-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+div.form-group.date.required.booking_end_date select {
+  display: inline-block;
+  width: auto;
+}
+
+div.form-group.date.required.booking_start_date select {
+  display: inline-block;
+  width: auto;
+}
+
+.book-btn {
+  width: 100%;
+}
