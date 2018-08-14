@@ -7,10 +7,9 @@
   <div class="offer-wrapper">
     <div class="offer-info-container">
       <h5><%= @offer.category %></h5>
-      <h1><%= @offer.title %></h1>
-      <%= link_to edit_offer_path(@offer) do %>
+      <h1><%= @offer.title %><%= link_to edit_offer_path(@offer) do %>
         <button class="btn btn-primary"><i class="fas fa-edit"></i>Edit Offer</button>
-      <% end %>
+      <% end %></h1>
       <p><%= @offer.description %></p>
       <p><%= @offer.location %></p>
       <div id="map" style="background-image: url('https://badoocdn.com/big/g/64/22219.png'); background-size: cover;">
@@ -21,4 +20,5 @@
       <%= render "shared/form" %>
     </div>
   </div>
+  <%= link_to "Delete this offer", offer_path(@offer), method: "delete", style: "padding-left: 50px;" %>
 </div>
