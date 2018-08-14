@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 400px;
+  color: $gray;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-left: 0px;
+  margin-right: 0px;
+  align-items: flex-start;
+}
+
+.card-photo {
+  height: 150px;
+  background-size: cover !important;
+  background-position: center;
+  position: relative;
+}
+
+.card-user-renter {
+  position: absolute;
+  text-align: center;
+  left: 105px;
+  top: 115px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.card-info {
+  height: 150px;
+  margin-top: 10px;
+}
+
+.card-review {
+  height: 100px;
+}
+
+.card-info h2 {
+  font-size: 20px;
+  text-align: center;
+}
+.card-review h3 {
+  font-size: 18px;
+  text-align: center;
+}
+.card-info p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+
+h1 {
+  margin-left: 30px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+
+
+
