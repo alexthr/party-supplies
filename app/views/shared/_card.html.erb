@@ -1,0 +1,9 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://static.fnac-static.com/multimedia/Images/FR/MC/3e/ec/45/21359678/1540-1/tsp20131028171742/Table-de-mixage-de-DJ-pour-chats.jpg');">
+  <div class="card-category"><%= offer.category %></div>
+  <div class="card-description">
+    <h2><%= offer.title %></h2>
+    <h4><%= offer.price %>€</h4>
+  </div>
+  <img class="card-user" src="https://pbs.twimg.com/profile_images/950658267138658306/BRh577Ai_400x400.jpg">
+  <%= link_to '', offer_path(offer), class: "card-link" %>
+</div>

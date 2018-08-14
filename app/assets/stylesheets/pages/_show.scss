@@ -8,3 +8,41 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.offer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  height: 5000px;
+}
+
+.offer-info-container {
+  width: 500px;
+}
+
+.booking-form {
+  border: 1px solid #E4E4E4;
+  padding: 20px;
+  position: sticky;
+  top: 20px;
+  height: 300px;
+}
+
+div.form-group.date.required.booking_end_date select {
+  display: inline-block;
+  width: auto;
+}
+
+div.form-group.date.required.booking_start_date select {
+  display: inline-block;
+  width: auto;
+}
+
+.book-btn {
+  width: 100%;
+}
+
+#map {
+  height: 500px;
+  background-position: center;
+}
