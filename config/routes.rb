@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     resources :offers, only: :index
     resources :bookings, only: :index
   end
+
+  get '/search', to: 'search#search'
 end
