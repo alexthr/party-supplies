@@ -8,12 +8,12 @@
     </div>
   </div>
   <div class="card2 bookings">
-    <p>My bookings</p>
+    <h5>My bookings</h5>
     <p><%= @user.bookings.last.offer.title %></p>
   </div>
   <div class="card2 offers">
     <h5>My offers</h5>
-    <br><p><%= @user.offers.last %></p>
+    <br><p><%= @user.offers.last.title %></p>
   </div>
   <div class="card2 inbox">
     <h5>Messages</h5>
