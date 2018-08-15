@@ -1,10 +1,11 @@
 .banner {
   background-image: url('banner.jpg');
   background-size: cover;
+  background-position: 20px 0;
   height: 500px;
 }
 
-h1 {
+.banner h1 {
   font-family: 'Lobster', cursive;
   color: #0000CD;
   padding-top: 50px;
@@ -13,7 +14,7 @@ h1 {
 }
 
 
-p {
+.banner p {
   font-family: 'Montserrat', sans-serif;
   color: #6A5ACD;
   background-color: rgba(255, 255, 255, .3);
@@ -21,7 +22,4 @@ p {
   text-align: center;
 }
 
-p {
-  text-align: center;
-}
 
