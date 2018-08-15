@@ -1,6 +1,6 @@
-<div class="footer footer-image">
+<div class="footer footer-image" style="background-image: url('<%= cl_image_path "footer_background" %>');">
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= cl_image_tag "logo", height: 50 %>
   <% end %>
 
   <div class="footer-links" align="center">
