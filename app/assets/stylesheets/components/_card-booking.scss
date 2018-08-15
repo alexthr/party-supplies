@@ -1,15 +1,10 @@
-.container {
+.card-booking {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-around;
-  height: 400px;
-  color: $gray;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  margin-left: 0px;
-  margin-right: 0px;
-  align-items: flex-start;
+  border-style: solid;
+  border-color: #E4E4E4;
+  border-width: 1px;
 }
 
 .card-photo {
@@ -22,15 +17,16 @@
 .card-user-renter {
   position: absolute;
   text-align: center;
-  left: 105px;
+  left: calc( 50% - 25px);
   top: 115px;
-  width: 40px;
+  width: 50px;
   border-radius: 50%;
 }
 
 .card-info {
   height: 150px;
-  margin-top: 10px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .card-review {
@@ -38,7 +34,7 @@
 }
 
 .card-info h2 {
-  font-size: 20px;
+  font-size: 28px;
   text-align: center;
 }
 .card-review h3 {

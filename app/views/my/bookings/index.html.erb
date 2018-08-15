@@ -1,10 +1,12 @@
-<h1>Your bookings</h1>
-<div class="container">
-  <div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="col-xs-6 col-sm-4">
-        <%= render 'card', booking: booking %>
-      </div>
-    <% end %>
+<div class="wrapper-booking">
+  <h1>Your bookings</h1>
+  <div class="container">
+    <div class="row">
+      <% @bookings.each do |booking| %>
+        <div class="col-xs-6 col-sm-4">
+          <%= render 'card', booking: booking %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
