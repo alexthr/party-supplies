@@ -1,3 +1,29 @@
-<div class="container">
-  <h1><%= @user.username %></h1>
+<div class="container text-center grid">
+  <div class="card2 profile">
+    <div class="card-content">
+      <img src="https://pbs.twimg.com/profile_images/915594841924435970/5BNUl4uA.jpg" alt="" width="150" class="img-circle">
+      <h2><%= @user.username %></h2>
+      <p>Serious party girl</p>
+      <a href="#" class="btn btn-info btn-lg">Edit my profile</a>
+    </div>
+  </div>
+  <div class="card2 bookings">
+    <p>My bookings</p>
+    <p><%= @user.bookings.last.offer.title %></p>
+  </div>
+  <div class="card2 offers">
+    <h5>My offers</h5>
+    <br><p><%= @user.offers.last %></p>
+  </div>
+  <div class="card2 inbox">
+    <h5>Messages</h5>
+    </div>
+  <div class="card2 more-info">
+    <div class="card-content">
+      <h3>About <%= @user.username %></h3>
+      <p class="text-justify">
+      I'm the kind of person that like to party all the time. I have all sorts of desire in terms of cocktails and stuff. I even coded a whole website cocktail and shit. I obviously adore shooter, I think it's probably the wittiest invention of all times.
+      </p>
+    </div>
+  </div>
 </div>
