@@ -5,9 +5,18 @@
   padding: 1px;
 }
 
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+}
+
+h2 {
+  font-family: $body-font;
+}
+
 h3 {
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
