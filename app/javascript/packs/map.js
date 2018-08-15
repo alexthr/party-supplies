@@ -15,7 +15,7 @@ const map = new mapboxgl.Map({
   });
 
 if (Array.isArray(geojson) === false) {
-  console.log("hello");
+  console.log(geojson);
   const marker = new mapboxgl.Marker()
   .setLngLat([geojson.lng, geojson.lat])
   .addTo(map);

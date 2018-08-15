@@ -9,7 +9,7 @@ class OffersController < ApplicationController
     @booking = Booking.new
     @marker = {
       lat: @offer.latitude,
-      long: @offer.longitude
+      lng: @offer.longitude
     }
   end
 
