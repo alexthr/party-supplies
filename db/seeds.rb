@@ -11,11 +11,12 @@ Offer.destroy_all
 
 titles = ["Speakers", "DJ table", "Lights", "Smoke machine", "Beer tap"]
 categories = ["Sound", "Lights", "Alcohol", "Decorations", "Misc"]
+addresses = ["6 rue de conde bordeaux", "le wagon, bordeaux", "place gambetta, bordeaux", "allee de tourny, bordeaux"];
 
 user1 = User.find(1)
 
 10.times do
-  offer = Offer.new(title: titles.sample, price: rand(1..100), description: Faker::Lorem.paragraph(10, true, 30), location: "Bordeaux", category: categories.sample, remote_photo_url: "https://imagescdn.juno.co.uk/full/IS440124-01-01-BIG.jpg" )
+  offer = Offer.new(title: titles.sample, price: rand(1..100), description: Faker::Lorem.paragraph(10, true, 30), location: addresses.sample, category: categories.sample, remote_photo_url: "https://imagescdn.juno.co.uk/full/IS440124-01-01-BIG.jpg" )
   offer.user = user1
   offer.save
 end

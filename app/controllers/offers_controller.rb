@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   before_action :find_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @offers = Offer.all
+    @offers = Offer.where.not(latitude: nil, longitude: nil)
   end
 
   def show
