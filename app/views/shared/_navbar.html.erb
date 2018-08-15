@@ -10,6 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <% unless current_page?(root_path) %>
+        <%= render "shared/search_bar" %>
+      <% end %>
       <%= link_to "Add an offer", new_offer_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
