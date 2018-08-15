@@ -9,4 +9,9 @@
         <p>There are no offers containing the term <strong><%= params[:q] %></strong>.</p>
     <% end %>
   </div>
+  <div id="map" data-geojson="<%= @markers.to_json %>" data-pk="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  </div>
 </div>
+
+<%= javascript_pack_tag 'map' %>

@@ -12,7 +12,7 @@
       <% end %></h1>
       <p><%= @offer.description %></p>
       <p><%= @offer.location %></p>
-      <div id="map" style="background-image: url('https://badoocdn.com/big/g/64/22219.png'); background-size: cover;">
+      <div id="map" data-geojson="<%= @marker.to_json %>" data-pk="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
     <div class="booking-form">
@@ -22,3 +22,9 @@
   </div>
   <%= link_to "Delete this offer", offer_path(@offer), method: "delete", style: "padding-left: 50px;" %>
 </div>
+
+
+<%= javascript_pack_tag 'map' %>
+
+
+
