@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
   before_action :find_offer, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @offers = Offer.where.not(latitude: nil, longitude: nil)

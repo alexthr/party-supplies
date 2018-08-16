@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = @offer.bookings.new(booking_params)
     @booking.user = current_user
     @booking.save
-    redirect_to offer_path(@offer)
+    redirect_to my_bookings_path
   end
 
   private
