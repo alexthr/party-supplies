@@ -30,7 +30,7 @@ class OffersController < ApplicationController
   end
 
   def edit
-
+    @categories = ["Sound", "Lights", "Drinks", "Decorations", "Costumes", "Entertainment", "Misc"];
   end
 
   def update
