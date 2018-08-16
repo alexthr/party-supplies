@@ -7,10 +7,10 @@ class OffersController < ApplicationController
 
   def show
     @booking = Booking.new
-    @marker = {
+    @markers = [{
       lat: @offer.latitude,
       lng: @offer.longitude
-    }
+    }]
   end
 
   def new
@@ -30,6 +30,7 @@ class OffersController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
