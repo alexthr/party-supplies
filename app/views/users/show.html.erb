@@ -1,19 +1,28 @@
 <div class="container text-center grid">
   <div class="card2 profile">
     <div class="card-content">
-      <img src="https://pbs.twimg.com/profile_images/915594841924435970/5BNUl4uA.jpg" alt="" width="150" class="img-circle">
+      <img src="<%= cl_image_path @user.avatar %>" alt="" width="150" class="img-circle">
       <h2><%= @user.username %></h2>
-      <p>Serious party girl</p>
-      <a href="#" class="btn btn-info btn-lg">Edit my profile</a>
+      <h1 class="color-font"><%= link_to edit_user_registration_path do %>
+        <button class="btn btn-info offer-btn"><i class="fas fa-edit"></i>Edit profile</button>
+      <% end %></h1>
     </div>
   </div>
   <div class="card2 bookings">
     <h5>My bookings</h5>
-    <p><%= @user.bookings.last.offer.title %></p>
+    <% if @user.bookings.count < 1 %>
+      <p>You don't have any bookings yet</p>
+    <% else %>
+      <p><%= @user.bookings.last.offer.title %></p>
+    <% end %>
   </div>
   <div class="card2 offers">
     <h5>My offers</h5>
-    <br><p><%= @user.offers.last.title %></p>
+    <% if @user.offers.count < 1 %>
+      <p>You don't have any offers yet</p>
+    <% else %>
+      <br><p><%= @user.offers.last.title %></p>
+    <% end %>
   </div>
   <div class="card2 inbox">
     <h5>Messages</h5>
@@ -22,7 +31,7 @@
     <div class="card-content">
       <h3>About <%= @user.username %></h3>
       <p class="text-justify">
-      I'm the kind of person that like to party all the time. I have all sorts of desire in terms of cocktails and stuff. I even coded a whole website cocktail and shit. I obviously adore shooter, I think it's probably the wittiest invention of all times.
+      <%= @user.bio %>
       </p>
     </div>
   </div>
