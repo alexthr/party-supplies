@@ -1,10 +1,15 @@
 <div class="banner" style="background-image: url('<%= cl_image_path "banner" %>');">
-  <div class="banner-content">
-    <h1>Party Supplies</h1>
-    <p>Vos évènements sur mesure</p>
-    <!-- <a href="" class="btn-yours">Search now</a> -->
-  </div>
-  <div class="row">
-    <%= render "shared/home_search_bar" %>
+  <div class="container">
+    <div class="row">
+      <div class="banner-content">
+        <h1>Party Supplies</h1>
+        <p>Vos évènements sur mesure</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="banner-search">
+        <%= render "shared/home_search_bar" %>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,7 +1,14 @@
 class SearchController < ApplicationController
   def search
-    if params[:query]
-      @offers=  Offer.search_offers(params[:query])
+    if params.keys.include?("query")
+      session[:query_param] = params[:query]
+      session[:category_param] = ""
+    elsif params.keys.include?("category")
+      session[:category_param] = params[:category]
+    end
+
+    if session[:query_param].present?
+      @offers = Offer.search_offers("#{session[:query_param]} #{session[:category_param]}")
     else
       @offers = Offer.all.order("created_at DESC")
     end
@@ -11,5 +18,6 @@ class SearchController < ApplicationController
         lng: offer.longitude
       }
     end
+    @categories = Offer.categories
   end
 end

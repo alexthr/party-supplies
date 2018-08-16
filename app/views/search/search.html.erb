@@ -1,3 +1,14 @@
+<div class="filter-bar">
+  <div class="container">
+    <div class="row">
+      <p>Filter by:</p>
+      <%= form_tag search_path, :method => :get do %>
+        <%= select_tag :category, options_for_select(@categories, selected: session[:category_param]) %>
+        <%= submit_tag "Filters", name: nil, class:"btn btn-primary" %>
+    <% end %>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <h2 class="margin-left"><%= @offers.count %> <%= @offers.count < 2 ? "offer" : "offers"%> found</h2>
@@ -7,10 +18,8 @@
       </div>
     <% end %>
     <% if @offers.blank? %>
-        <p>There are no offers containing the term <strong><%= params[:query] %></strong>.</p>
+        <p class="margin-left">There are no offers containing the term <strong><%= params[:query] %></strong>.</p>
     <% end %>
   </div>
   <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
-
-

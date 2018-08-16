@@ -18,4 +18,8 @@ class Offer < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+    def self.categories
+      ["", "Sound", "Lights", "Drinks", "Decorations", "Costumes", "Entertainment", "Misc"]
+    end
 end
