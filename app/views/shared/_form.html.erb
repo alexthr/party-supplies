@@ -1,7 +1,7 @@
 <% url = new_user_session_path unless user_signed_in? %>
 
 <%= simple_form_for [@offer, @booking], url: url do |f| %>
-  <%= f.input :start_date, as: :date, 'data-behaviour' => 'datepicker' %>
-  <%= f.input :end_date, as: :date, class: "datepicker" %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
   <%= f.submit "Book for your party", class: "btn btn-primary book-btn" %>
 <% end %>

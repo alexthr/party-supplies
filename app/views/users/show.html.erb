@@ -9,19 +9,19 @@
     </div>
   </div>
   <div class="card2 bookings">
-    <h5>My bookings</h5>
+    <div><h5>Your bookings</h5></div>
     <% if @user.bookings.count < 1 %>
-      <p>You don't have any bookings yet</p>
+      <div><p>You don't have any bookings yet</p></div>
     <% else %>
-      <p><%= @user.bookings.last.offer.title %></p>
+      <div><p><%= @user.bookings.last.offer.title %></p></div>
     <% end %>
   </div>
   <div class="card2 offers">
-    <h5>My offers</h5>
+    <h5>Your offers</h5>
     <% if @user.offers.count < 1 %>
       <p>You don't have any offers yet</p>
     <% else %>
-      <br><p><%= @user.offers.last.title %></p>
+      <p><%= @user.offers.last.title %></p>
     <% end %>
   </div>
   <div class="card2 inbox">

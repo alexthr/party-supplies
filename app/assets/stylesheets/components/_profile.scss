@@ -23,16 +23,22 @@
 .bookings {
   grid-row: 1;
   grid-column: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .offers {
   grid-row: 1;
   grid-column: 3;
+  display: flex;
+  flex-direction: column;
 }
 
 .inbox {
   grid-row: 1;
   grid-column: 4;
+  display: flex;
+  flex-direction: column;
 }
 
 .more-info {
