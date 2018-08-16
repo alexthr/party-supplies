@@ -11,6 +11,7 @@ class OffersController < ApplicationController
       lat: @offer.latitude,
       lng: @offer.longitude
     }]
+
   end
 
   def new

@@ -9,7 +9,7 @@
         <p>There are no offers containing the term <strong><%= params[:q] %></strong>.</p>
     <% end %>
   </div>
-  <div id="map" data-markers="<%= @markers.to_json %>">
+  <div id="map" data-markers="<%= @markers.to_json %>" data-offers="<%= @offers.map { |offer| offer.to_json} %>">
 
   </div>
 </div>
