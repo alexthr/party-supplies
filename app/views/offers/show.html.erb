@@ -7,7 +7,9 @@
   <div class="offer-wrapper">
     <div class="offer-info-container">
       <h5><%= @offer.category %></h5>
-      <h1 class="color-font"><%= @offer.title %><%= link_to edit_offer_path(@offer) do %>
+      <% if current_user == @offer.user %>
+        <h1 class="color-font"><%= @offer.title %><%= link_to edit_offer_path(@offer) do %>
+      <% end %>
         <button class="btn btn-primary offer-btn"><i class="fas fa-edit"></i>Edit Offer</button>
       <% end %></h1>
       <p><%= @offer.description %></p>
@@ -15,12 +17,16 @@
       <div id="map" data-geojson="<%= @marker.to_json %>" data-pk="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-    <div class="booking-form">
-      <p><strong><%= @offer.price %>€</strong> par jour</p>
-      <%= render "shared/form" %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="booking-form">
+        <p><strong><%= @offer.price %>€</strong> par jour</p>
+        <%= render "shared/form" %>
+      </div>
+    <% end %>
   </div>
-  <%= link_to "Delete this offer", offer_path(@offer), method: "delete", style: "padding-left: 50px;" %>
+  <% if current_user == @offer.user %>
+    <%= link_to "Delete this offer", offer_path(@offer), method: "delete", style: "padding-left: 50px;" %>
+  <% end %>
 </div>
 
 
