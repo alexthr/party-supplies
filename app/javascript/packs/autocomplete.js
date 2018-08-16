@@ -1,10 +1,10 @@
 function autocomplete() {
   document.addEventListener("DOMContentLoaded", function() {
-    var flatAddress = document.getElementById('flat_address');
+    var offerAddress = document.getElementById('offer-address');
 
-    if (flatAddress) {
-      var autocomplete = new google.maps.places.Autocomplete(flatAddress, { types: [ 'geocode' ] });
-      google.maps.event.addDomListener(flatAddress, 'keydown', function(e) {
+    if (offerAddress) {
+      var autocomplete = new google.maps.places.Autocomplete(offerAddress, { types: [ 'geocode' ] });
+      google.maps.event.addDomListener(offerAddress, 'keydown', function(e) {
         if (e.key === "Enter") {
           e.preventDefault(); // Do not submit the form on Enter.
         }
@@ -12,3 +12,5 @@ function autocomplete() {
     }
   });
 }
+
+export { autocomplete };
