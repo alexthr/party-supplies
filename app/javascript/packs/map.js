@@ -1,32 +1,18 @@
-import mapboxgl from 'mapbox-gl';
-// mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleHRociIsImEiOiJjamtjZDBhNmYwMHkzM2tvenlxZXJ0dHNhIn0.S4gZKUGV_FoVEq4CmXf2Kg';
+import GMaps from 'gmaps/gmaps.js';
 
 const mapElement = document.getElementById('map');
-mapboxgl.accessToken = mapElement.dataset.pk;
+if (mapElement) { // don't try to build a map if there's no div#map to inject in
+  const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
+  console.log(JSON.parse(mapElement.dataset.markers).length);
+  const markers = JSON.parse(mapElement.dataset.markers);
 
-const geojson = JSON.parse(mapElement.dataset.geojson);
-console.log(geojson);
-
-const map = new mapboxgl.Map({
-    container: 'map', // HTML container id
-    style: 'mapbox://styles/mapbox/streets-v9', // style URL
-    // center: [markers.long, markers.lat], // starting position as [lng, lat]
-    zoom: 13
-  });
-
-if (Array.isArray(geojson) === false) {
-  console.log(geojson);
-  const marker = new mapboxgl.Marker()
-  .setLngLat([geojson.lng, geojson.lat])
-  .addTo(map);
-  map.setCenter(marker.getLngLat());
-} else {
-  // map.fitBounds([[geojson[0].lng, geojson[0].lat], [geojson[1].lng, geojson[0].lat]]);
-  geojson.forEach( (coordinates) => {
-    console.log(coordinates);
-    const marker = new mapboxgl.Marker()
-  .setLngLat([coordinates.lng, coordinates.lat])
-  .addTo(map);
-  });
-  map.setCenter(geojson[0]);
+  map.addMarkers(markers);
+  if (markers.length === 0) {
+    map.setZoom(2);
+  } else if (markers.length === 1) {
+    map.setCenter(markers[0].lat, markers[0].lng);
+    map.setZoom(14);
+  } else {
+    map.fitLatLngBounds(markers);
+  }
 }
