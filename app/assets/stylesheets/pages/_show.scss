@@ -10,6 +10,11 @@
   background-position: top;
 }
 
+.offer-photo:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
 .offer-wrapper {
   display: flex;
   justify-content: space-between;
@@ -62,4 +67,45 @@ div.form-group.date.required.booking_start_date select {
 .small-map {
   height: 500px;
   background-position: center;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-image {
+  margin: auto;
+  display: block;
+  width: 80%;
+}
+
+#modal-close-btn {
+  position: absolute;
+  font-size: 30px;
+  top: 50px;
+  right: 30px;
+}
+
+#modal-close-btn:hover {
+  color: #bbb;
+  cursor: pointer;
+}
+
+.modal-image {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
 }
