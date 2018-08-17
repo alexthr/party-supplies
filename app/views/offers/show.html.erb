@@ -29,10 +29,23 @@
     <%= link_to "Delete this offer", offer_path(@offer), method: "delete", style: "padding-left: 50px;" %>
   <% end %>
 </div>
-
+<div class="modal">
+  <i id="modal-close-btn" class="fas fa-times"></i>
+  <%= cl_image_tag @offer.photo, class: "modal-image" %>
+</div>
 
 <%= javascript_pack_tag "booking-price" %>
 
+<script>
+  offerPhoto = document.querySelector(".offer-photo");
+  modal = document.querySelector(".modal");
+  closeBtn = document.getElementById("modal-close-btn");
+  offerPhoto.addEventListener("click", (e) => {
+    modal.style.display = "block";
+  })
 
-
+  closeBtn.addEventListener("click", (e) => {
+    modal.style.display = "none";
+  })
+</script>
 
