@@ -12,7 +12,7 @@
       <% end %></h1>
       <p><%= @offer.description %></p>
       <p><%= @offer.location %></p>
-      <div id="map" data-markers="<%= @markers.to_json %>">
+      <div id="map" class="small-map" data-markers="<%= @markers.to_json %>">
       </div>
     </div>
     <div class="booking-form">
@@ -25,6 +25,26 @@
 
 
 
+<script>
+let startDateInput = document.getElementById("booking_start_date");
+let endDateInput = document.getElementById("booking_end_date");
 
+
+startDateInput.addEventListener("change", (e) => {
+  console.log(startDateInput.value);
+  let startDate = Date.parse(startDateInput);
+  let endDate = Date.parse(endDateInput);
+
+  console.log(startDate);
+  console.log(endDate);
+});
+
+endDateInput.addEventListener("change", (e) => {
+
+});
+
+
+
+</script>
 
 

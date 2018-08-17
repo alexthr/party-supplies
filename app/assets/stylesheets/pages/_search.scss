@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+}
+
+.cards-container {
+  flex: 1 1;
+  margin: 30px;
+}
+
+.sticky-map {
+  height: 100vh;
+  position: sticky !important;
+  top: 0px;
+  flex: 0 0 33%;
+}

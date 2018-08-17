@@ -13,7 +13,11 @@ class SearchController < ApplicationController
       {
         lat: offer.latitude,
         lng: offer.longitude,
-        infoWindow: { content: render_to_string(partial: "/offers/map_box", locals: { offer: offer }) }
+        infoWindow: { content: render_to_string(partial: "/offers/map_box", locals: { offer: offer }) },
+        picture: {
+        "url": view_context.image_path("logo.png"),
+        "width":  50,
+        "height": 45 }
       }
     end
   end
