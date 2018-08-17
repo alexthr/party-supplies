@@ -19,6 +19,9 @@
       <p style="font-weight: bold;"><%= @offer.location %></p>
       <div id="map" class="small-map" data-markers="<%= @markers.to_json %>">
       </div>
+      <% if current_user == @offer.user %>
+        <%= link_to "Delete this offer", offer_path(@offer), method: "delete", class: 'btn btn-primary btn-delete' %>
+      <% end %>
     </div>
     <div class="booking-form">
       <p><strong><%= @offer.price %>€</strong> per day</p>
@@ -26,9 +29,6 @@
       <%= render "shared/form" %>
     </div>
   </div>
-  <% if current_user == @offer.user %>
-    <%= link_to "Delete this offer", offer_path(@offer), method: "delete", style: "padding-left: 50px;" %>
-  <% end %>
 </div>
 <div class="modal">
   <i id="modal-close-btn" class="fas fa-times"></i>

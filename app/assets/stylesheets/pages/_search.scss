@@ -10,6 +10,7 @@
 .sticky-map {
   height: 100vh;
   position: sticky !important;
+  z-index: 3;
   top: 0px;
   flex: 0 0 33%;
 }
