@@ -9,22 +9,18 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <h2 class="margin-left"><%= pluralize @offers.size, "offer" %> found</h2>
-    <% @offers.each do |offer| %>
+<div class="wrapper">
+  <div class="cards-container">
+    <div class="row">
+      <% @offers.each do |offer| %>
       <div class="col-xs-6 col-sm-4">
         <%= render 'shared/card', offer: offer %>
       </div>
-    <% end %>
-    <% if @offers.blank? %>
-        <p class="margin-left">There are no offers containing the term <strong><%= params[:query] %></strong>.</p>
-    <% end %>
+      <% end %>
+      <% if @offers.blank? %>
+      <p>There are no offers containing the term <strong><%= params[:q] %></strong>.</p>
+      <% end %>
+    </div>
   </div>
-
-  <div id="map" data-markers="<%= @markers.to_json %>"></div>
-
-  <div id="map" data-markers="<%= @markers.to_json %>" data-offers="<%= @offers.map { |offer| offer.to_json} %>"></div> 
-  
+  <div id="map" class="sticky-map" data-markers="<%= @markers.to_json %>" data-offers="<%= @offers.map { |offer| offer.to_json} %>"></div>
 </div>
-

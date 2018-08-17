@@ -20,12 +20,18 @@
   width: 500px;
 }
 
+.offer-info-container h1 {
+  margin: 0;
+}
+
+
 .booking-form {
   border: 1px solid #E4E4E4;
   padding: 20px;
   position: sticky;
   top: 20px;
   height: 300px;
+  width: 350px;
 }
 
 .color-font {
@@ -53,7 +59,7 @@ div.form-group.date.required.booking_start_date select {
   width: 100%;
 }
 
-#map {
+.small-map {
   height: 500px;
   background-position: center;
 }
