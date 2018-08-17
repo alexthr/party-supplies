@@ -20,6 +20,6 @@ class Offer < ApplicationRecord
     }
 
     def self.categories
-      ["", "Sound", "Lights", "Drinks", "Decorations", "Costumes", "Entertainment", "Misc"]
+      ["", "Sound", "Lights", "Drinks", "Decorations", "Costumes", "Entertainment", "Misc"].sort_by!{ |e| e.downcase }
     end
 end

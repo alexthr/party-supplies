@@ -6,12 +6,15 @@
 <div class="container">
   <div class="offer-wrapper">
     <div class="offer-info-container">
+
       <h5><%= @offer.category %></h5>
-      <% if current_user == @offer.user %>
-        <h1 class="color-font"><%= @offer.title %><%= link_to edit_offer_path(@offer) do %>
-      <% end %>
-        <button class="btn btn-primary offer-btn"><i class="fas fa-edit"></i>Edit Offer</button>
-      <% end %></h1>
+       <h1 class="color-font"><%= @offer.title %></h1>
+       <% if current_user == @offer.user %>
+         <%= link_to edit_offer_path(@offer) do %>
+           <button class="btn btn-primary offer-btn"><i class="fas fa-edit"></i>Edit Offer</button>
+         <% end %>
+       <% end %>
+
       <p><%= @offer.description %></p>
       <p><%= @offer.location %></p>
       <div id="map" data-markers="<%= @markers.to_json %>">

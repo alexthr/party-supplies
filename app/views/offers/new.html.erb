@@ -4,7 +4,7 @@
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :location, input_html: { id: "offer-address" } %>
-  <%= f.input :category, collection: @categories %>
+  <%= f.input :category, collection: Offer.categories %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit %>

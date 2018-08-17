@@ -12,6 +12,13 @@ class SearchController < ApplicationController
     else
       @offers = Offer.all.order("created_at DESC")
     end
+
+    if params[:pricemin] || params[:pricemax]
+      @pricemin = params[:pricemin]
+      @pricemax = params[:pricemax]
+      @offers = Offer.between_range(@pricemin, @pricemax)
+    end
+
     @markers = @offers.map do |offer|
       {
         lat: offer.latitude,
