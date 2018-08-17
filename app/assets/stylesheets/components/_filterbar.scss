@@ -1,4 +1,12 @@
 .filter-bar {
-  background: rgba(0, 0, 0, 0.1);
-  height: 70px;
+  background: rgba(255, 255, 255, 0.9);
+  height: 100px;
+  position: sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 3;
+}
+
+.filter {
+  margin: 10px 0;
 }
