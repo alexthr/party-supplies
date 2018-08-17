@@ -1,8 +1,12 @@
 <div class="container text-center grid">
   <div class="card2 profile">
     <div class="card-content">
-      <img src="<%= cl_image_path @user.avatar %>" alt="" width="150" class="img-circle">
-      <h2><%= @user.username %></h2>
+      <% if @user.avatar? %>
+      <%= cl_image_tag @user.avatar, class: "img-circle", width: 150 %>
+      <% else %>
+        <img class="img-circle src="https://image.freepik.com/free-icon/user-black-shape_318-34174.jpg">
+      <% end %>
+      <h1><%= @user.username %></h1>
       <h1 class="color-font"><%= link_to edit_user_registration_path do %>
         <button class="btn btn-info offer-btn"><i class="fas fa-edit"></i>Edit profile</button>
       <% end %></h1>
@@ -18,7 +22,7 @@
     <div class="bookings-circle">
       <%= @user.bookings.count %>
     </div>
-    <%= link_to '', my_offers_path, class: "card-link" %>
+    <%= link_to '', my_bookings_path, class: "card-link" %>
   </div>
   <div class="card2 offers">
     <h5>Your offers</h5>
@@ -30,14 +34,14 @@
         <div class="offers-circle">
       <%= @user.offers.count %>
     </div>
-    <%= link_to '', my_bookings_path, class: "card-link" %>
+    <%= link_to '', my_offers_path, class: "card-link" %>
   </div>
   <div class="card2 inbox">
     <h5>Messages</h5>
   </div>
   <div class="card2 more-info">
     <div class="card-content">
-      <h3>About <%= @user.username %></h3>
+      <h3>About you</h3>
       <p class="text-justify">
       <%= @user.bio %>
       </p>

@@ -15,7 +15,7 @@
     </h3>
   </div>
   <div>
-    <img class="card-user-renter" src="https://pbs.twimg.com/profile_images/915594841924435970/5BNUl4uA_400x400.jpg">
-    <%= link_to '', my_offers_path, class: "card-link" %>
+      <%= cl_image_tag cl_image_tag_or_not(booking.offer.user.avatar), class: "card-user-renter" %>
+    <%= link_to '', offer_path(booking.offer), class: "card-link" %>
   </div>
 </div>
