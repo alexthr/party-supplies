@@ -1,0 +1,11 @@
+<%= link_to offer_path(offer) do %>
+<div class="info-window">
+  <div class="info-window-offer-image" style="background-image: url('<%= cl_image_path offer.photo %>');">
+  </div>
+  <div class="info-window-offer-info">
+    <h6><%= offer.category %></h6>
+    <h4><%= offer.title %></h3>
+    <h5><strong><%= offer.price %>€</strong> per day</h5>
+  </div>
+</div>
+<% end %>
