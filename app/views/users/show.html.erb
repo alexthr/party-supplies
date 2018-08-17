@@ -1,7 +1,7 @@
 <div class="container text-center grid">
   <div class="card2 profile">
     <div class="card-content">
-      <%= cl_image_tag cl_image_tag_or_not(@user.avatar), class: "img-circle", width: 150 %>
+      <%= cl_image_tag cl_image_tag_or_not(@user.avatar), class: "profile-img" %>
       <h1><%= @user.username %></h1>
       <h1 class="color-font"><%= link_to edit_user_registration_path do %>
         <button class="btn btn-info offer-btn"><i class="fas fa-edit"></i>Edit profile</button>
