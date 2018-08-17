@@ -25,6 +25,16 @@
   grid-column: 2;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.bookings-circle {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: $yellow;
 }
 
 .offers {
@@ -32,6 +42,16 @@
   grid-column: 3;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.offers-circle {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: $yellow;
 }
 
 .inbox {

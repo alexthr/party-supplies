@@ -9,12 +9,16 @@
     </div>
   </div>
   <div class="card2 bookings">
-    <div><h5>Your bookings</h5></div>
+    <h5>Your bookings</h5> <% link_to my_bookings_path %>
     <% if @user.bookings.count < 1 %>
-      <div><p>You don't have any bookings yet</p></div>
+      <p>You don't have any bookings yet</p>
     <% else %>
-      <div><p><%= @user.bookings.last.offer.title %></p></div>
+      <p><%= @user.bookings.last.offer.title %></p>
     <% end %>
+    <div class="bookings-circle">
+      <%= @user.bookings.count %>
+    </div>
+    <%= link_to '', my_offers_path, class: "card-link" %>
   </div>
   <div class="card2 offers">
     <h5>Your offers</h5>
@@ -23,10 +27,14 @@
     <% else %>
       <p><%= @user.offers.last.title %></p>
     <% end %>
+        <div class="offers-circle">
+      <%= @user.offers.count %>
+    </div>
+    <%= link_to '', my_bookings_path, class: "card-link" %>
   </div>
   <div class="card2 inbox">
     <h5>Messages</h5>
-    </div>
+  </div>
   <div class="card2 more-info">
     <div class="card-content">
       <h3>About <%= @user.username %></h3>
