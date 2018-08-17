@@ -1,11 +1,14 @@
 class SearchController < ApplicationController
   def search
-    if params[:q]
-      @offers = Offer.where("title ILIKE ? OR category ILIKE ? OR location ILIKE ? OR description ILIKE ?",
-        "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%").all.order("created_at DESC")
-      if @offers.first.nil?
-        @offers = Offer.joins(:user).where("username ILIKE ?", "%#{params[:q]}%").all.order("created_at DESC")
-      end
+    if params.keys.include?("query")
+      session[:query_param] = params[:query]
+      session[:category_param] = ""
+    elsif params.keys.include?("category")
+      session[:category_param] = params[:category]
+    end
+
+    if session[:query_param].present?
+      @offers = Offer.search_offers("#{session[:query_param]} #{session[:category_param]}")
     else
       @offers = Offer.all.order("created_at DESC")
     end
@@ -20,5 +23,6 @@ class SearchController < ApplicationController
         "height": 45 }
       }
     end
+    @categories = Offer.categories
   end
 end
