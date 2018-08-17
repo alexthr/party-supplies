@@ -10,7 +10,7 @@
       <h1 class="color-font"><%= @offer.title %></h1>
       <% if current_user == @offer.user %>
         <%= link_to edit_offer_path(@offer) do %>
-          <button class="btn btn-primary offer-btn"><i class="fas fa-edit"></i>Edit Offer</button>
+          <button class="btn btn-warning offer-btn"><i class="fas fa-edit"></i>Edit Offer</button>
         <% end %>
       <% end %>
       <p><%= @offer.description %></p>
