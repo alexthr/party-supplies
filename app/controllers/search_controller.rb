@@ -15,7 +15,8 @@ class SearchController < ApplicationController
     @markers = @offers.map do |offer|
       {
         lat: offer.latitude,
-        lng: offer.longitude
+        lng: offer.longitude,
+        infoWindow: { content: render_to_string(partial: "/offers/map_box", locals: { offer: offer }) }
       }
     end
     @categories = Offer.categories

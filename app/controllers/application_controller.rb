@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   # after_action :clean_query_param
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :avatar, :bio])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :avatar, :bio])
   end
-
-
+  
   def clean_query_param
     session[:query_param] = ""
   end
