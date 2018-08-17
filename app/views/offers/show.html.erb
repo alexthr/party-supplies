@@ -8,20 +8,20 @@
     <div class="offer-info-container">
 
       <h5><%= @offer.category %></h5>
-       <h1 class="color-font"><%= @offer.title %></h1>
-       <% if current_user == @offer.user %>
-         <%= link_to edit_offer_path(@offer) do %>
-           <button class="btn btn-primary offer-btn"><i class="fas fa-edit"></i>Edit Offer</button>
-         <% end %>
-       <% end %>
-
+      <h1 class="color-font"><%= @offer.title %></h1>
+      <% if current_user == @offer.user %>
+        <%= link_to edit_offer_path(@offer) do %>
+          <button class="btn btn-warning offer-btn"><i class="fas fa-edit"></i>Edit Offer</button>
+        <% end %>
+      <% end %>
       <p><%= @offer.description %></p>
-      <p><%= @offer.location %></p>
-      <div id="map" data-markers="<%= @markers.to_json %>">
+      <p style="font-weight: bold;"><%= @offer.location %></p>
+      <div id="map" class="small-map" data-markers="<%= @markers.to_json %>">
       </div>
     </div>
     <div class="booking-form">
-      <p><strong><%= @offer.price %>€</strong> par jour</p>
+      <p><strong><%= @offer.price %>€</strong> per day</p>
+      <h4 id="js-booking-total" data-price="<%= @offer.price %>">Total: <%= @offer.price %>€</h4>
       <%= render "shared/form" %>
     </div>
   </div>
@@ -31,6 +31,7 @@
 </div>
 
 
+<%= javascript_pack_tag "booking-price" %>
 
 
 

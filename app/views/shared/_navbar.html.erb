@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-backimg">
   <!-- Logo -->
   <%= link_to offers_path, class: "navbar-wagon-brand" do %>
     <%= cl_image_tag "logo", height: 50 %>
@@ -18,7 +18,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= cl_image_tag cl_image_tag_or_not(@user.avatar), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to my_offers_path do %>

@@ -4,6 +4,6 @@
     <h2><%= offer.title %></h2>
     <h2><%= offer.price %>€</h2>
   </div>
-  <%= cl_image_tag offer.user.avatar, class: 'card-user' %>
+  <%= cl_image_tag cl_image_tag_or_not(offer.user.avatar), class: "card-user" %>
   <%= link_to '', offer_path(offer), class: "card-link" %>
 </div>
