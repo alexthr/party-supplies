@@ -1,11 +1,7 @@
 <div class="container text-center grid">
   <div class="card2 profile">
     <div class="card-content">
-      <% if @user.avatar? %>
-      <%= cl_image_tag @user.avatar, class: "img-circle", width: 150 %>
-      <% else %>
-        <img class="img-circle src="https://image.freepik.com/free-icon/user-black-shape_318-34174.jpg">
-      <% end %>
+      <%= cl_image_tag cl_image_tag_or_not(@user.avatar), class: "img-circle", width: 150 %>
       <h1><%= @user.username %></h1>
       <h1 class="color-font"><%= link_to edit_user_registration_path do %>
         <button class="btn btn-info offer-btn"><i class="fas fa-edit"></i>Edit profile</button>
