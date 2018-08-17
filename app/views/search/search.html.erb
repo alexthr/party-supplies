@@ -1,11 +1,15 @@
 <div class="filter-bar">
   <div class="container">
     <div class="row">
-      <p>Filter by:</p>
-      <%= form_tag search_path, :method => :get do %>
-        <%= select_tag :category, options_for_select(@categories, selected: session[:category_param]) %>
-        <%= submit_tag "Filters", name: nil, class:"btn btn-primary" %>
-    <% end %>
+      <div class="filter">
+        <p>Filter by:</p>
+        <%= form_tag search_path, :method => :get do %>
+          <%= select_tag :category, options_for_select(@categories, selected: session[:category_param]), class:"transparency-background" %>
+          <%= text_field_tag :pricemin, '', placeholder: "Min price...", value: params[:pricemin]%>
+          <%= text_field_tag :pricemax, '', placeholder: "Max price...", value: params[:pricemax], class:"transparency-background" %>
+          <%= submit_tag "Filter", name: nil, class:"btn btn-primary" %>
+        <% end %>
+    </div>
     </div>
   </div>
 </div>

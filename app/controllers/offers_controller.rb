@@ -17,7 +17,6 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
-    @categories = ["Sound", "Lights", "Drinks", "Decorations", "Costumes", "Entertainment", "Misc"];
   end
 
   def create
@@ -26,14 +25,12 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offer_path(@offer)
     else
-      @categories = ["Sound", "Lights", "Drinks", "Decorations", "Costumes", "Entertainment", "Misc"];
+      Offer.categories;
       render :new
     end
   end
 
-  def edit
-    @categories = ["Sound", "Lights", "Drinks", "Decorations", "Costumes", "Entertainment", "Misc"];
-  end
+  def edit; end
 
   def update
     @offer.update(offer_params)

@@ -8,10 +8,23 @@ class SearchController < ApplicationController
     end
 
     if session[:query_param].present?
-      @offers = Offer.search_offers("#{session[:query_param]} #{session[:category_param]}")
+      @offers = Offer.search_offers("#{session[:query_param]}")
     else
       @offers = Offer.all.order("created_at DESC")
     end
+
+    if session[:category_param].present?
+        @offers = Offer.where("category LIKE ?", session[:category_param])
+    end
+
+    if params[:pricemax].to_i > 0 && params[:pricemin].to_i > 0
+      @offers = @offers.where("price >= ? AND price <= ?", params[:pricemin].to_i, params[:pricemax].to_i)
+    elsif params[:pricemin].to_i >0
+      @offers = @offers.where("price >= ?", params[:pricemin].to_i)
+    elsif params[:pricemax].to_i > 0 && params[:pricemin] == ""
+      @offers = @offers.where("price <= ?", params[:pricemax].to_i)
+    end
+
     @markers = @offers.map do |offer|
       {
         lat: offer.latitude,
